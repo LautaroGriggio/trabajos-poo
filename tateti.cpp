@@ -1,4 +1,4 @@
-/* Fuentes 5ª2 */
+/* Fuentes, Griggio, Rechusky, Rojas 5Âª2 */
 
 // Bibliotecas
 #include <stdio.h>
