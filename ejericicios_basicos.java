@@ -1,43 +1,50 @@
-
+import java.util.Scanner;
 public class talo {
 
-		 
-		public static void main(String[] args) {
-	 
-			//Declaramos las variables
-			int num1=10;
-			int num2=5;
-	 
-			/*Realizamos las operaciones.
-			 * Tambien lo podemos guardar el resultado en variables. */
-	 
-			System.out.println("El resultado de la suma es "+(num1+num2));
-	 
-			System.out.println("El resultado de la resta es "+(num1-num2));
-	 
-			System.out.println("El resultado de la multiplicación es "+(num1*num2));
-	 
-			System.out.println("El resultado de la división es "+(num1/num2));
-		}
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in); 
+		//Declaramos las variables
+		int num1=10;
+		int num2=5;
+ 
+		/*Realizamos las operaciones.
+		 * Tambien lo podemos guardar el resultado en variables. */
+ 
+		System.out.println("El resultado de la suma es "+(num1+num2));
+ 
+		System.out.println("El resultado de la resta es "+(num1-num2));
+ 
+		System.out.println("El resultado de la multiplicación es "+(num1*num2));
+ 
+		System.out.println("El resultado de la división es "+(num1/num2));
+		
+		numeros(scan,num1,num2);
+		nombre(scan);
+	}
 
-		public static void main(String[] args) {
-			 
-			//Declaramos las variables
-			int num1=30;
-			int num2=15;
-	 
-			//Hacemos la comprobación
-			if (num1>=num2){
-				//If anidado
-				if(num1==num2){
-					System.out.println("Los numeros "+num1+" y "+num2+" son iguales");
-				}
-				else{
-					System.out.println("El número "+num1+" es mayor que el número "+num2);
-				}
+	public static void numeros(Scanner scan, int a, int b) {
+		 
+		//Declaramos las variables
+		int num1= scan.nextInt();
+		int num2= scan.nextInt();
+ 
+		//Hacemos la comprobación
+		if (a>=b){
+			//If anidado
+			if(a==b){
+				System.out.println("Los numeros "+a+" y "+b+" son iguales");
 			}
-				else{
-					System.out.println("El número "+num2+" es mayor que el número "+num1);
-				}
+			else{
+				System.out.println("El número "+a+" es mayor que el número "+b);
+			}
 		}
+			else{
+				System.out.println("El número "+b+" es mayor que el número "+a);
+			}
+	}
+	
+	public static void nombre(Scanner scan) {
+		String mensaje = scan.next();
+		System.out.println("Bienvenido  " + mensaje);
+	}	
 }
