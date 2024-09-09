@@ -1,6 +1,7 @@
+package ejerciciosJava;
 import java.util.Scanner;
 public class talo {
-
+//lo primero poner ejerciciosJava, lo segundo poner talo
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in); 
 		//Declaramos las variables
@@ -18,15 +19,16 @@ public class talo {
  
 		System.out.println("El resultado de la división es "+(num1/num2));
 		
-		numeros(scan,num1,num2);
+		numeros(scan);
 		nombre(scan);
 	}
 
-	public static void numeros(Scanner scan, int a, int b) {
+	public static void numeros(Scanner scan) {
 		 
-		//Declaramos las variables
-		int num1= scan.nextInt();
-		int num2= scan.nextInt();
+		System.out.println("ingese el primer numero");
+		int a= scan.nextInt();
+		System.out.println("ingese el segundo numero");
+		int b= scan.nextInt();
  
 		//Hacemos la comprobación
 		if (a>=b){
@@ -44,7 +46,9 @@ public class talo {
 	}
 	
 	public static void nombre(Scanner scan) {
+		System.out.println("ingrese su nombre");
 		String mensaje = scan.next();
 		System.out.println("Bienvenido  " + mensaje);
 	}	
+
 }
