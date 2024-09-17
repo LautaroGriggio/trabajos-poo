@@ -4,12 +4,11 @@ public class talo {
 //lo primero poner ejerciciosJava, lo segundo poner talo
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in); 
-		//Declaramos las variables
+
 		int num1=10;
 		int num2=5;
  
-		/*Realizamos las operaciones.
-		 * Tambien lo podemos guardar el resultado en variables. */
+
  
 		System.out.println("El resultado de la suma es "+(num1+num2));
  
@@ -21,7 +20,9 @@ public class talo {
 		
 		numeros(scan);
 		nombre(scan);
+		RadioCirculo(scan);
 	}
+
 
 	public static void numeros(Scanner scan) {
 		 
@@ -30,9 +31,9 @@ public class talo {
 		System.out.println("ingese el segundo numero");
 		int b= scan.nextInt();
  
-		//Hacemos la comprobación
+
 		if (a>=b){
-			//If anidado
+
 			if(a==b){
 				System.out.println("Los numeros "+a+" y "+b+" son iguales");
 			}
@@ -51,4 +52,15 @@ public class talo {
 		System.out.println("Bienvenido  " + mensaje);
 	}	
 
-}
+
+//4
+	public static void RadioCirculo(Scanner scan) {
+		
+		System.out.println("ingrese radio");
+		int radio = scan.nextInt();
+		double sup = 3.14 * radio;
+		
+		System.out.println("la superficie del circulo es de :  " + sup);
+		
+	}
+	}
