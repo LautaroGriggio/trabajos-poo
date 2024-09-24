@@ -46,6 +46,10 @@ public class talo {
 		case 6:{
 			precio(scan);
 			break;}
+		
+		case 7:{
+			ceroAcien();
+			break;}
 		}
 	}
 
@@ -112,6 +116,16 @@ public class talo {
 		System.out.println("El precio + el Iva es un total de  " + precioIva);
 		
 	}
+	public static void ceroAcien(){
+	int num = 0;
+	while(num<101){
+	
+		System.out.println("  " +num);
+		num++;
+	};
+	}
+	
+	
 	
 	
 	}
