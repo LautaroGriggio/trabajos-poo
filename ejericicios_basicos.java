@@ -7,7 +7,11 @@ public class talo {
 
 		int num1=10;
 		int num2=5;
- 
+		System.out.println("Que ejercicio quiere ver?");
+		int menu = scan.nextInt();  
+		
+		switch (menu){
+		case 1:{
 
  
 		System.out.println("El resultado de la suma es "+(num1+num2));
@@ -18,9 +22,31 @@ public class talo {
  
 		System.out.println("El resultado de la división es "+(num1/num2));
 		
+		break;}
+
+	case 2:{
 		numeros(scan);
+		
+		break;}
+	case 3:{
 		nombre(scan);
+		
+		break;}
+	
+	case 4:{
 		RadioCirculo(scan);
+		
+		break;}
+	case 5:{
+		NumDiv(scan);
+		
+		break;}
+	
+		
+		case 6:{
+			precio(scan);
+			break;}
+		}
 	}
 
 
@@ -63,4 +89,29 @@ public class talo {
 		System.out.println("la superficie del circulo es de :  " + sup);
 		
 	}
+	
+	public static void NumDiv(Scanner scan) {
+		
+		System.out.println("ingrese el numero para verificar");
+		int n = scan.nextInt();
+		if(n%2 == 0) {
+			System.out.println("el numero ingresado es par");
+		}
+		else {
+			System.out.println("el numero ingresado es inpar");
+		}
+	}
+	
+	public static void precio(Scanner scan) {
+		System.out.println("ingrese el precio");
+		Float precio = scan.nextFloat();
+		
+		double IVA = (21*precio)/100;
+		double precioIva = precio + IVA;
+		
+		System.out.println("El precio + el Iva es un total de  " + precioIva);
+		
+	}
+	
+	
 	}
