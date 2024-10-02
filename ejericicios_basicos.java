@@ -2,6 +2,7 @@ package ejerciciosJava;
 import java.util.Scanner;
 public class talo {
 //lo primero poner ejerciciosJava, lo segundo poner talo. 
+//hechos: 1; 2; 4; 5; 6; 9; 12; 13; 14; 15;
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in); 
 
@@ -50,8 +51,23 @@ public class talo {
 		case 7:{
 			ceroAcien();
 			break;}
+		
+		 
+		case 8:{
+			ventas(scan);
+		break;}
+		
+		case 9:{
+			ecuacion(scan);
+		break;}
+		
+		case 10:{
+			dowhile(scan);
+		break;}
 		}
-	}
+		}
+		
+	
 
 
 	public static void numeros(Scanner scan) {
@@ -119,13 +135,67 @@ public class talo {
 	public static void ceroAcien(){
 	int num = 0;
 	while(num<101){
-	
-		System.out.println("  " +num);
-		num++;
-	};
+			if(num%2==0 || num%3==0){
+				System.out.println("  " +num);
+		
+			}
+			num++;
+		};
 	}
 	
+	public static void ventas(Scanner scan) {
 	
+		System.out.println(" Introduce el número de ventas ");
+        int Nventas= scan.nextInt();
+        int sumaVentas=0;
+        for (int i=0;i<Nventas;i++){
+            System.out.println("Introduce el precio de la venta "+(i+1));
+            int totventa = scan.nextInt();
+        
+            sumaVentas = sumaVentas+ totventa;
+        }
+ 
+        System.out.println("el total a pagar por todas lasventas es de:  " +sumaVentas);
+	}
+	
+	public static void ecuacion(Scanner scan) {
+		System.out.println("Introduce el valor de a  ");
+        int a=scan.nextInt();
+        System.out.println("Introduce el valor de b  ");
+        int b=scan.nextInt();
+        System.out.println("Introduce el valor de c  ");
+        int c=scan.nextInt();
+        
+        double disc = Math.pow(b, 2)-(4*a*c);
+        
+    
+        System.out.println(" >> " +disc);
+ 
+        if (disc>0){
+
+            double X1=((b*(-1))+Math.sqrt(disc))/(2*a);
+            double X2=((b*(-1))-Math.sqrt(disc))/(2*a);
+ 
+            System.out.println("el valor de x1 es "+X1+" y el valor de x2 es " +X2);
+        }
+        else{
+            System.out.println("el discriminante es negativo ");
+        }
+	}
+	
+	public static void dowhile(Scanner scan) {
+      
+		
+		int n;
+		do{
+            System.out.println(" ingresa un numero mayor que 0");
+            n=scan.nextInt();
+        }while(n<=0);
+ 
+        System.out.println(n);
+    }
+
 	
 	
 	}
+	
