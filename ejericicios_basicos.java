@@ -1,7 +1,7 @@
 package ejerciciosJava;
 import java.util.Scanner;
 public class talo {
-//lo primero poner ejerciciosJava, lo segundo poner talo
+//lo primero poner ejerciciosJava, lo segundo poner talo. 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in); 
 
