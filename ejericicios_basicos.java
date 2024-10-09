@@ -204,7 +204,7 @@ public class talo {
 	
 	public static void contraseña(Scanner scan) {
 		 
-		        String contraseña="oaaa";
+		        String contraseña="abc";
 		 
 		        final int INTENTOS = 3;
 		        
