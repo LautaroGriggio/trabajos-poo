@@ -64,7 +64,14 @@ public class talo {
 		case 10:{
 			dowhile(scan);
 		break;}
+		
+		case 11:{
+			contraseña(scan);
+		break;}
+		
 		}
+		
+		
 		}
 		
 	
@@ -194,7 +201,29 @@ public class talo {
  
         System.out.println(n);
     }
+	
+	public static void contraseña(Scanner scan) {
+		 
+		        String contraseña="oaaa";
+		 
+		        final int INTENTOS = 3;
+		        
 
+		        boolean acierto=false;
+		 
+		        String contra;
+		        for (int i=0;i<INTENTOS && !acierto;i++){
+		            System.out.println("Introduce una contraseña");
+		            contra = scan.next();
+		 
+		            if (contra.equals(contraseña)){
+		                System.out.println("biennn, acertaste");
+		                acierto=true;
+		            }
+		        }
+		    }
+	
+	}
 	
 	
 	}
