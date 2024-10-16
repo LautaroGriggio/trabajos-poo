@@ -69,9 +69,29 @@ public class talo {
 			contraseña(scan);
 		break;}
 		
+		case 12:{
+		
+			incorrecta(scan);
+		break;}
+		
+		case 13:{
+			semana(scan);
+		break;}
+		
+		case 14:{
+			rand(scan);
 		}
-		
-		
+		case 15:{
+			cifras(scan);
+			
+		}
+		case 16:{
+			primo(scan);
+		}
+		case 17:{
+			pri();
+		}
+		}
 		}
 		
 	
@@ -222,9 +242,156 @@ public class talo {
 		            }
 		        }
 		    }
+	public static void incorrecta(Scanner scan) {
+		
+		String contraseña="abc";
+		String contra;  
+        final int INTENTOS = 3;
+        
+
+        boolean acierto=false;
+        
+        for (int i = 0; i < INTENTOS && !acierto; i++) {
+            System.out.println("Introduce una contraseña:");
+            contra = scan.next(); 
+
+            if (contra.equals(contraseña)) { 
+                System.out.println("biennnn, acertaste !");
+                acierto = true;   
+            } else {
+                System.out.println("Contraseña incorrecta. Te quedan " + (INTENTOS - i - 1) + " intentos.");
+            }
+        }
+
+        if (!acierto) { 
+            System.out.println("agotaste todos los intentos.");
+        }
+	}
+	
+	public static void semana(Scanner scan) {
+		
+		System.out.println("Introduce un dia de la semana (lunes, martes, etc.):");
+        String dia = scan.nextLine();
+        
+        switch (dia) {
+            case "lunes":
+            case "martes":
+            case "miercoles":
+            case "jueves":
+            case "viernes":
+                System.out.println(dia + " es un dia laboral.");
+                break;
+            case "sabado":
+            case "domingo":
+                System.out.println(dia + " no es un dia laboral.");
+                break;
+            default:
+                System.out.println("El dia ingresado no es válido.");
+        }
+	}
+	
+	public static void rand(Scanner scan) {
+		System.out.println("Introduce el primer numero:");
+        int num1 = scan.nextInt();
+        
+        System.out.println("Introduce el segundo numero:");
+        int num2 = scan.nextInt();
+        
+        int min = Math.min(num1, num2);
+        int max = Math.max(num1, num2);
+        
+        System.out.println(" 10 numeros aleatorios entre " + min + " y " + max + ":");
+        
+
+        for (int i = 0; i < 10; i++) {
+            int aleatorio = (int) (Math.random() * (max - min + 1)) + min;
+            System.out.println("los numeros son "+ aleatorio );
+        }
+	}
+	public static void cifras(Scanner scan) {
+		
+	int numero;
+
+    do {
+        System.out.println("Introduce un numero positivo:");
+        numero = scan.nextInt();
+        if (numero <= 0) {
+            System.out.println("Error: El numero debe ser positivo.");
+        }
+    } while (numero <= 0); 
+
+
+    int cifras = String.valueOf(numero).length(); 
+    
+    if (cifras == 1) {
+        System.out.println("El numero tiene 1 cifra.");
+    } else {
+        System.out.println("El numero tiene " + cifras + " cifras.");
+    }
+	
+	}
+	
+	public static void primo(Scanner scan) {
+		
+		System.out.println("Introduce un numero:");
+        int numero = scan.nextInt();
+        
+        if (esPrimo(numero)) {
+            System.out.println(numero + " es un numero primo.");
+        } else {
+            System.out.println(numero + " no es un numero primo.");
+        }
+    }
+
+ 
+    public static boolean esPrimo(int numero) {
+
+        if (numero <= 1) {
+            return false;
+        }
+        
+        int raiz = (int) Math.sqrt(numero);
+        for (int i = 2; i <= raiz; i++) {
+            if (numero % i == 0) {
+                return false;  
+            }
+        }
+        
+  
+        return true;
+	}
+	
+    public static void pri(){
+    	System.out.println("Numeros primos entre 1 y 100:");
+        
+
+        for (int i = 1; i <= 100; i++) {
+            if (esPrimo(i)) {
+                System.out.println(i);  // 
+            }
+        }
+    }
+
+
+    public static boolean esPrimo(int numer) {
+
+        if (numer <= 1) {
+            return false;
+        }
+
+        int raiz = (int) Math.sqrt(numer);
+        for (int i = 2; i <= raiz; i++) {
+            if (numer % i == 0) {
+                return false;  
+            }
+        }
+        
+        return true;
+    }
+    
+    
 	
 	}
 	
 	
-	}
 	
