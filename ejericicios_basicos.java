@@ -91,6 +91,12 @@ public class talo {
 		case 17:{
 			pri();
 		}
+		
+		case 18:{
+		lluvia();	
+		}
+		
+		
 		}
 		}
 		
@@ -389,9 +395,29 @@ public class talo {
         return true;
     }
     
+    public static void lluvia() {
+        String frase = "La lluvia en Sevilla es una maravilla";
+        int contadorVocales = 0;
+
+
+        for (int i = 0; i < frase.length(); i++) {
+            char caracter = frase.charAt(i);
+            
+ 
+            if (esVocal(caracter)) {
+                contadorVocales++;
+            }
+        }
+
+        System.out.println("El numero total de vocales es: " + contadorVocales);
+    }
+
+    public static boolean esVocal(char c) {
+        c = Character.toLowerCase(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
     
-	
-	}
-	
+
+    }
 	
 	
