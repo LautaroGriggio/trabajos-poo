@@ -96,6 +96,44 @@ public class talo {
 		lluvia();	
 		}
 		
+		case 19:{
+		calcu(scan);
+		}
+		
+		case 20:{
+			suma(scan);
+		}
+		
+		case 21:{
+			contNum(scan);
+		}
+		
+		
+		case 22:{
+			espacios(scan);
+		}
+		
+		case 23:{
+			mayus(scan);
+		}
+		
+		case 24:{
+			longi(scan);
+		}
+		
+		case 25:{
+			palabras(scan);
+		}
+		
+		case 26:{
+			separa(scan);
+		}
+		
+		case 27:{
+			contar(scan);
+		}
+		
+
 		
 		}
 		}
@@ -132,7 +170,7 @@ public class talo {
 	}	
 
 
-//4
+
 	public static void RadioCirculo(Scanner scan) {
 		
 		System.out.println("ingrese radio");
@@ -350,22 +388,7 @@ public class talo {
     }
 
  
-    public static boolean esPrimo(int numero) {
 
-        if (numero <= 1) {
-            return false;
-        }
-        
-        int raiz = (int) Math.sqrt(numero);
-        for (int i = 2; i <= raiz; i++) {
-            if (numero % i == 0) {
-                return false;  
-            }
-        }
-        
-  
-        return true;
-	}
 	
     public static void pri(){
     	System.out.println("Numeros primos entre 1 y 100:");
@@ -417,7 +440,230 @@ public class talo {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
     
+    public static void calcu(Scanner scan) { 
+    	System.out.print("Ingrese el primer operando (numero entero): ");
+        int operando1 = scan.nextInt();
+
+        System.out.print("Ingrese el segundo operando (numero entero): ");
+        int operando2 = scan.nextInt();
+
+
+        System.out.print("Ingrese el signo aritmetico (+, -, *, /, ^, %): ");
+        String operacion = scan.next();
+
+     
+        String resultado = "";
+
+     
+        switch (operacion) {
+            case "+":
+                resultado = "La suma es: " + (operando1 + operando2);
+                break;
+            case "-":
+                resultado = "La resta es: " + (operando1 - operando2);
+                break;
+            case "*":
+                resultado = "La multiplicación es: " + (operando1 * operando2);
+                break;
+            case "/":
+                if (operando2 != 0) {
+                    double division = (double) operando1 / operando2;
+                    resultado = "La division es: " + division;
+                } else {
+                    resultado = "Error: Division por cero.";
+                }
+                break;
+            case "^":
+                double potencia = Math.pow(operando1, operando2);
+                resultado = "El resultado de la potencia es: " + potencia;
+                break;
+            case "%":
+                resultado = "El modulo es: " + (operando1 % operando2);
+                break;
+            default:
+                resultado = "Operación no valida.";
+        }
+
+
+        System.out.println(resultado);
+
 
     }
-	
-	
+    
+    public static void suma(Scanner scan) {
+    	 int numero;
+         
+
+         do {
+             System.out.print("Ingrese un numero mayor que 1: ");
+             numero = scan.nextInt();
+
+             if (numero <= 1) {
+                 System.out.println("El numero debe ser mayor que 1.");
+             }
+         } while (numero <= 1);
+
+
+         int suma = 0;
+
+         for (int i = 1; i <= numero; i++) {
+             suma += i;
+         }
+
+         System.out.println("La suma de los numeros de 1 a " + numero + " es: " + suma);
+
+     
+    }
+    
+    public static void contNum(Scanner scan) {
+    	int numero;
+        int contador = 0;
+
+      
+        do {
+            System.out.print("Ingrese un numero (o -1 para terminar): ");
+            numero = scan.nextInt();
+
+            if (numero != -1) {
+                contador++;  
+            }
+
+        } while (numero != -1);
+
+
+        System.out.println("Has ingresado " + contador + " numeros.");
+
+    }
+    
+    
+    public static void espacios(Scanner scan) {
+        System.out.print("Ingrese una frase: ");
+        String frase = scan.nextLine();
+
+
+        String fraseSinEspacios = frase.replace(" ", "");
+
+
+        System.out.println("Frase sin espacios: " + fraseSinEspacios);
+
+    }
+
+    
+    
+    public static void mayus(Scanner scan) {
+    	System.out.print("Ingrese una frase: ");
+        String frase = scan.nextLine();
+
+        System.out.print("queres cambiar entre mayuscula o minusculas (M/m): ");
+        String opcion = scan.next();
+
+
+        String resultado;
+
+      
+        if (opcion.equalsIgnoreCase("M")) {
+            resultado = frase.toUpperCase(); 
+        } else if (opcion.equalsIgnoreCase("m")) {
+            resultado = frase.toLowerCase(); 
+        } else {
+            resultado = "Opcion no válida. Intente nuevamente.";
+        }
+
+        System.out.println("Resultado: " + resultado);
+
+    }
+    
+    public static void longi(Scanner scan){
+    	 System.out.print("Ingrese una frase: ");
+         String frase = scan.nextLine();
+
+      
+         int longitud = frase.length();
+
+       
+         System.out.println("La longitud de la frase es: " + longitud);
+
+    	
+    }
+    
+    public static void palabras(Scanner scan) {
+    	System.out.print("Ingrese la primera palabra: ");
+        String palabra1 = scan.nextLine();
+
+        System.out.print("Ingrese la segunda palabra: ");
+        String palabra2 = scan.nextLine();
+
+
+        if (palabra1.equals(palabra2)) {
+            System.out.println("Las palabras son iguales.");
+        } else {
+            System.out.println("Las palabras son diferentes.");
+        }
+    }
+    
+    public static void separa(Scanner scan) {
+
+        System.out.print("Ingrese una frase: ");
+        String frase = scan.nextLine();
+
+ 
+        String[] palabras = frase.split(" ");
+
+
+        System.out.println("Las palabras en la frase son:");
+        for (String palabra : palabras) {
+            System.out.println(palabra);
+        }
+    }
+    
+    public static void contar(Scanner scan) {
+    	 int numero;
+         int mayor = Integer.MIN_VALUE;
+         int menor = Integer.MAX_VALUE;
+         int sumaTotal = 0;
+         int sumaPositivos = 0;
+         int sumaNegativos = 0;
+         int contador = 0;
+
+
+         System.out.println("Ingrese números (ingrese -1 para terminar):");
+         
+         while (true) {
+             numero = scan.nextInt();
+
+             if (numero == -1) {
+                 break; 
+             }
+
+         
+             if (numero > mayor) {
+                 mayor = numero;
+             }
+             if (numero < menor) {
+                 menor = numero;
+             }
+
+     
+             sumaTotal += numero;
+             if (numero > 0) {
+                 sumaPositivos += numero;
+             } else if (numero < 0) {
+                 sumaNegativos += numero;
+             }
+
+     
+             contador++;
+         }
+
+
+         double media = (contador > 0) ? (double) sumaTotal / contador : 0;
+
+
+         System.out.println("Mayor numero introducido: " + (mayor == Integer.MIN_VALUE ? "Ninguno" : mayor));
+         System.out.println("Menor numero introducido: " + (menor == Integer.MAX_VALUE ? "Ninguno" : menor));
+         System.out.println("Suma de todos los numeros: " + sumaTotal);
+         System.out.println("Suma de los numeros positivos: " + sumaPositivos);
+         System.out.println("Suma de los numeros negativos: " + sumaNegativos);
+         System.out.println("Media de la suma: " + media);
+    }
+}
