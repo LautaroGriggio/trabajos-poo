@@ -1,0 +1,11 @@
+package Package;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        New_Window ventana = new New_Window();  
+        ventana.setVisible(true);  
+    }
+
+}
